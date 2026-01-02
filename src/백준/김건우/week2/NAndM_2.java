@@ -1,4 +1,4 @@
-package 백준.김건우;
+package 백준.김건우.week2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -6,10 +6,9 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class NAndM {
+public class NAndM_2 {
     static int N, M;
     static int result[];
-    static boolean used[];
     static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws Exception{
@@ -17,13 +16,12 @@ public class NAndM {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
         N =  Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
         result = new int[M];
-        used = new boolean[N];
-
-        recursion(0);
+        recursion(0, 0);
 
         bw.write(sb.toString());
 
@@ -32,7 +30,7 @@ public class NAndM {
         bw.close();
     }
 
-    static void recursion(int num){
+    static void recursion(int num, int start){
         if(num == M){
             for(int n: result){
                 sb.append(n).append(" ");
@@ -41,13 +39,10 @@ public class NAndM {
             return;
         }
 
-        for(int i = 0 ; i < N ; i++){
-            if(!used[i]){
-                used[i] = true;
-                result[num] = i + 1;
-                recursion(num+1);
-                used[i] = false;
-            }
+        for(int i = start ; i < N ; i++){
+            if(N - i < M - num) break;
+            result[num] = i + 1;
+            recursion(num + 1, i + 1);
         }
     }
 }

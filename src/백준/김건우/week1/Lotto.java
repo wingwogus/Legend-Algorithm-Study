@@ -1,4 +1,4 @@
-package 백준.김건우;
+package 백준.김건우.week1;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
