@@ -19,9 +19,9 @@ int main(void) {
             }
             else { //스택이 비어있지 않고
                 if (st.top() == '(' && input[i] == ')') { //top이 여는 괄호면서 다음 인자가 닫는 괄호면
-                    st.pop();//Pop
+                    st.pop();
                 }
-                else {//그 외의 경우는 모두 push
+                else { //그 외의 경우는 모두 push
                     st.push(input[i]);
                 }
             }
