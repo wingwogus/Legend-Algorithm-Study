@@ -5,7 +5,7 @@ int N, M;
 int arr[9];
 bool visited[9];
 
-  void dfs(int start, int depth)
+void dfs(int start, int depth)
 {
     if (depth == M)
     {
