@@ -39,5 +39,6 @@ public class Parenthesis {
 
         bw.flush();
         bw.close();
+        br.close();
     }
 }
