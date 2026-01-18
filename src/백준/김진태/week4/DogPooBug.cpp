@@ -34,8 +34,8 @@ int is_faced(int layer) {
     int bottom_cnt = 0;
 
     int start = 0;
-    int top_end = top.size() - 1;
-    int bottom_end = bottom.size() - 1;
+    int top_end = top.size() - 1; // 상단
+    int bottom_end = bottom.size() - 1; // 하단
 
     int t_i = top.size(); // 찾을 인덱스
     int b_i = bottom.size(); // 초기 설정을 끝 값으로
