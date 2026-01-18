@@ -82,7 +82,7 @@ int main(){
         graph_vec[b].push_back(a); // 인접 행렬과 다른 식으로 생각해야됨.
     }
 
-    // 시작 정점은 항상 상근이 번호인 1번임
+    // 시작 정점 ->  상근이 번호인 1번
     invite_num = find_people_bfs(1,graph_vec,invited);
 
     cout << invite_num << '\n';

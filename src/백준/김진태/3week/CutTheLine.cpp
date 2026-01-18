@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-long long k, n; // 영식이가 가지고 있는 랜선 개수, 필요한 랜선 개수
+long long k, n; // 영식이가 가지고 있는 랜선 개수, 필요한 랜선 수
 long long max_length = 0;
 bool is_cutable(vector<long long> &line_length, long long mid) {
     long long sum = 0;

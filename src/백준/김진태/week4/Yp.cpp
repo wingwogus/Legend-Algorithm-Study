@@ -5,6 +5,7 @@ using namespace std;
 int sx,sy;
 int ex,ey; // 1. 시작점 , 2. 도착점
 
+// 시작 좌표와 도착 좌표가 원밖인지 안인지 구별
 bool is_in_start(int cx, int cy, int r){
     int x_ = (cx - sx) * (cx - sx);
     int y_ = (cy - sy) * (cy - sy);
