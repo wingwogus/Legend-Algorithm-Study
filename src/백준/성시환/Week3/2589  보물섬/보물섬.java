@@ -36,7 +36,7 @@ public class Main{
 
     int Treasure = 0; // 최단거리 이동시간 담을거
     
-    while (!LandPos.isEmpty()){ //육지 저장용 좌표가 비어있지 않을경우
+    while (!LandPos.isEmpty()){ // 육지 저장용 좌표가 비어있지 않을경우
       int[] Land = LandPos.poll(); // 큐에서 육지하나씩 꺼내서 탐색 (모든 육지를 하나씩 시작점으로 이용)
       int LandX = Land[0];
       int LandY = Land[1];
@@ -78,7 +78,7 @@ public class Main{
           if(!visited[nx][ny]){ // 방문하지 않은 좌표인지
             if(graph[nx][ny] == 'L'){ // 육지인지
               visited[nx][ny] = true;
-              queue.add(new int[]{nx , ny , count +1}); // 한칸 이동시 한시간 걸리기때문에 1더해서 큐에 넣기
+              queue.add(new int[]{nx , ny , count +1}); // 한칸 이동시 한시간 걸리기때문에 1 더해서 큐에 넣기
             }
           }
         }
