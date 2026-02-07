@@ -4,6 +4,7 @@
 using namespace std;
 
 int n, k; //물품 수, 버틸 수 있는 무게
+/*
 vector<vector<int> > things; // 각 물건들의 무게와 가치
 vector<int> weight;
 vector<int> value;
@@ -47,7 +48,35 @@ int pack() {
 
     return temp[n][k];
 }
+*/
+// 리펙토링
+vector<int> wtemp;
+vector<int> vtemp;
+vector<int> dp; // 특정 무게에 따른 물건을 담았을 때 최대 가치
+void input(){
+    cin >> n >> k;
 
+    wtemp.push_back(0); // 물건들 순서와 인덱스를 맞추기 위함
+    vtemp.push_back(0); // 물건들 순서와 인덱스를 맞추기 위함
+    for(int i=1; i<=n; i++){
+        int w,v;
+        cin >> w >> v;
+        wtemp.push_back(w);
+        vtemp.push_back(v);
+    }
+    dp.assign(k+1,0);
+}
+int pack(){
+    for(int i=1; i<=n; i++){ // i = 물건 순서
+        for(int w = k; w >= wtemp[i]; w--){
+            if(wtemp[i] <= w){ // 특정 무게에 물건을 넣을 수 있다면
+                dp[w] = max(dp[w], dp[w-wtemp[i]] + vtemp[i]);
+                //이전 무게의 최댓값과 구한 특정 무게의 최대값을 비교
+            }
+        }
+    }
+    return dp[k];
+}
 int main() {
     cin.tie(NULL);
 
